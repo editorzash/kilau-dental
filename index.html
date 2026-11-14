@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kilau Dental – Klinik Gigi Keluarga, Senyum Sehat Tanpa Rasa Takut</title>
+<meta name="description" content="Kilau Dental: klinik gigi keluarga dengan konsultasi pertama gratis, dokter yang menjelaskan setiap langkah, alat steril sekali pakai, dan estimasi biaya di awal.">
+<meta name="theme-color" content="#2754FF">
+<meta property="og:title" content="Kilau Dental – Senyum Sehat Tanpa Rasa Takut">
+<meta property="og:description" content="Konsultasi pertama gratis. Rencana dan harga tertulis sebelum perawatan dimulai.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F8FC;--paper:#fff;--ink:#0A1730;--mut:#55657F;--line:#DCE3EF;
+  --blue:#2754FF;--blue-d:#1A3FD6;--ice:#E8EEFF;--sun:#FFC93C;--sun-s:#FFF1C2;--ok:#12A150;
+  --disp:"Sora","Segoe UI",system-ui,sans-serif;--body:"Inter","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+[hidden]{display:none!important}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{width:min(1200px,100% - 40px);margin-inline:auto}
+h1,h2,h3,h4{font-family:var(--disp);letter-spacing:-.03em;line-height:1.06;font-weight:700}
+.i{width:20px;height:20px;flex:none}
+mark{background:linear-gradient(transparent 60%,var(--sun) 60% 92%,transparent 92%);color:inherit;padding:0 .05em}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 24px;border-radius:10px;font:600 15.5px var(--body);transition:.2s;white-space:nowrap}
+.btn.p{background:var(--blue);color:#fff;box-shadow:0 12px 24px -12px rgba(39,84,255,.9)}
+.btn.p:hover{background:var(--blue-d);transform:translateY(-2px)}
+.btn.g{border:1.5px solid var(--ink)}.btn.g:hover{background:var(--ink);color:#fff}
+.btn.y{background:var(--sun);color:var(--ink)}.btn.y:hover{transform:translateY(-2px)}
+.btn.w{background:#fff;color:var(--ink)}.btn.w:hover{transform:translateY(-2px)}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--d,0)*90ms)}
+.js .rv.in{opacity:1;transform:none}
+@keyframes pop{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(18,161,80,.6)}70%,100%{box-shadow:0 0 0 9px rgba(18,161,80,0)}}
+
+/* top bar + header */
+.top{background:var(--ink);color:#c9d4ea;font-size:13.5px}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:9px 0;flex-wrap:wrap}
+.top span{display:inline-flex;align-items:center;gap:8px}
+.top .i{width:16px;height:16px}
+.dot{width:9px;height:9px;border-radius:50%;background:#7a889f}
+.dot.on{background:#2ee08b;animation:pulse 2s infinite}
+header.hd{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:28px;height:72px}
+.logo{display:flex;align-items:center;gap:11px;font:800 24px var(--disp);letter-spacing:-.05em}
+.logo i{width:38px;height:38px;border-radius:10px;background:var(--blue);display:grid;place-items:center}
+.logo svg{width:26px;height:26px}
+.links{display:flex;gap:6px;margin-left:auto}
+.links a{padding:9px 14px;border-radius:8px;font-weight:500;font-size:15px;color:var(--mut);transition:.2s}
+.links a:hover{color:var(--ink);background:var(--bg)}
+.burger{display:none;width:44px;height:44px;border:1.5px solid var(--line);border-radius:10px;margin-left:auto;position:relative;background:#fff}
+.burger b{position:absolute;left:11px;right:11px;height:2px;background:var(--ink);transition:.25s}
+.burger b:nth-child(1){top:16px}.burger b:nth-child(2){top:26px}
+header.open .burger b:nth-child(1){top:21px;transform:rotate(45deg)}header.open .burger b:nth-child(2){top:21px;transform:rotate(-45deg)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(30px,5vw,72px);align-items:center;padding:clamp(40px,6vw,84px) 0 clamp(50px,6vw,84px)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:600 12.5px var(--body);letter-spacing:.15em;text-transform:uppercase;color:var(--blue)}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--blue)}
+.hero h1{font-size:clamp(42px,5.6vw,80px);font-weight:800;letter-spacing:-.045em;line-height:.98;margin:20px 0 22px}
+.lead{font-size:clamp(17px,1.5vw,19.5px);color:var(--mut);max-width:520px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.ticks{display:grid;gap:11px;margin-top:34px}
+.ticks li{display:flex;gap:12px;align-items:center;font-weight:500}
+.ticks .i{color:#fff;background:var(--ok);border-radius:50%;padding:3px;width:22px;height:22px}
+.stack{position:relative;aspect-ratio:1/1.03;isolation:isolate;max-width:580px;justify-self:end;width:100%}
+.m1{position:absolute;right:0;top:0;width:88%;aspect-ratio:4/3;background:var(--ice)}
+.m1::before{content:"";position:absolute;inset:18px -18px -18px 18px;background:var(--blue);z-index:-1}
+.m2{position:absolute;left:0;bottom:0;width:45%;aspect-ratio:3/4;border:7px solid var(--bg);background:var(--ice);box-shadow:0 24px 40px -22px rgba(10,23,48,.55)}
+.m1 img,.m2 img{width:100%;height:100%;object-fit:cover}
+.rate{position:absolute;left:3%;top:9%;background:#fff;border:1px solid var(--line);padding:12px 16px;box-shadow:0 18px 32px -18px rgba(10,23,48,.5);display:flex;align-items:center;gap:12px}
+.rate b{font:800 30px var(--disp);letter-spacing:-.05em;line-height:1}
+.rate small{display:block;font-size:12.5px;color:var(--mut);line-height:1.3}
+.str{color:#F2A000;letter-spacing:1px;font-size:14px;line-height:1.2}
+.stk{position:absolute;right:-6px;bottom:14%;width:122px;height:122px;border-radius:50%;background:var(--sun);display:grid;place-items:center;text-align:center;font:800 15px/1.12 var(--disp);letter-spacing:-.02em;transform:rotate(10deg);box-shadow:0 16px 28px -14px rgba(10,23,48,.6)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid var(--line)}
+.st{padding:28px 28px 26px;border-left:1px solid var(--line)}
+.st:first-child{border-left:0}
+.st b{display:block;font:800 clamp(36px,4.4vw,54px) var(--disp);letter-spacing:-.05em;line-height:1}
+.st b em{font-style:normal;color:var(--blue)}
+.st small{display:block;margin-top:8px;color:var(--mut);font-size:14.5px}
+
+/* sections */
+.sec{padding:clamp(64px,8vw,108px) 0}
+.sec+.sec{border-top:1px solid var(--line)}
+.lb{display:inline-flex;align-items:center;gap:12px;font:600 12.5px var(--body);letter-spacing:.15em;text-transform:uppercase;color:var(--blue)}
+.lb b{background:var(--ink);color:#fff;padding:3px 8px;border-radius:4px;letter-spacing:.06em}
+.sh{display:grid;grid-template-columns:7fr 5fr;gap:40px;align-items:end;margin-bottom:44px}
+.sh h2{font-size:clamp(32px,4.2vw,56px);margin-top:16px}
+.sh p{color:var(--mut)}
+
+/* service explorer */
+.svc{display:grid;grid-template-columns:.88fr 1.12fr;border:1px solid var(--line);background:#fff}
+.rows{border-right:1px solid var(--line)}
+.row{display:grid;grid-template-columns:40px 1fr auto 22px;align-items:center;gap:14px;width:100%;text-align:left;padding:19px 24px;border-bottom:1px solid var(--line);transition:background .2s,color .2s}
+.row:last-child{border-bottom:0}
+.row:hover{background:var(--bg)}
+.row .n{font:600 13px var(--body);color:var(--mut)}
+.row h3{font-size:19px;letter-spacing:-.02em}
+.row small{display:block;color:var(--mut);font-size:13.5px;margin-top:2px}
+.row .pr{font:600 13.5px var(--body);color:var(--mut);white-space:nowrap}
+.row .ar{width:20px;height:20px;opacity:0;transition:.2s;transform:translateX(-6px)}
+.row[aria-selected=true]{background:var(--blue);color:#fff}
+.row[aria-selected=true] .n,.row[aria-selected=true] small,.row[aria-selected=true] .pr{color:#cfdaff}
+.row[aria-selected=true] .ar{opacity:1;transform:none}
+.det{display:flex;flex-direction:column;min-width:0}
+.det figure{aspect-ratio:16/8.5;overflow:hidden;background:var(--ice)}
+.det figure img{width:100%;height:100%;object-fit:cover;animation:pop .5s}
+.det .tx{padding:28px 32px 32px;animation:pop .5s}
+.det h3{font-size:28px}
+.det p{color:var(--mut);margin:10px 0 20px}
+.m3{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line)}
+.m3>div{padding:14px 16px;border-left:1px solid var(--line)}
+.m3>div:first-child{border-left:0}
+.m3 small{display:block;font:600 11.5px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.m3 b{display:block;font:700 17px var(--disp);letter-spacing:-.02em;margin-top:2px}
+.bars{display:inline-flex;gap:3px;vertical-align:middle;margin-right:7px}
+.bars i{width:6px;height:15px;background:var(--line);border-radius:1px}.bars i.f{background:var(--blue)}
+.stp{counter-reset:s;display:grid;gap:9px;margin:22px 0 26px}
+.stp li{counter-increment:s;display:flex;gap:12px;align-items:center;font-size:15.5px}
+.stp li::before{content:counter(s);flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);color:var(--blue);display:grid;place-items:center;font:700 13px var(--body)}
+
+/* why band */
+.why{background:var(--blue);color:#fff;position:relative;overflow:hidden}
+.why::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(90deg,transparent,#000 70%)}
+.why .wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.why .lb{color:var(--sun)}.why .lb b{background:var(--sun);color:var(--ink)}
+.why h2{font-size:clamp(32px,4.2vw,54px);margin:16px 0 30px}
+.pts{display:grid;gap:22px}
+.pts li{display:grid;grid-template-columns:50px 1fr;gap:16px}
+.pts i{width:50px;height:50px;border:1.5px solid rgba(255,255,255,.4);display:grid;place-items:center;border-radius:10px}
+.pts svg{width:24px;height:24px}
+.pts b{display:block;font:700 19px var(--disp);letter-spacing:-.02em}
+.pts span{color:#d4defd;font-size:15.5px;line-height:1.5;display:block;margin-top:2px}
+.col2{position:relative;aspect-ratio:1/.92}
+.col2 .a{position:absolute;left:0;top:0;width:82%;aspect-ratio:3/2;overflow:hidden;box-shadow:0 30px 50px -26px rgba(0,0,20,.6)}
+.col2 .b{position:absolute;right:0;bottom:0;width:56%;aspect-ratio:3/2;overflow:hidden;border:7px solid var(--blue);box-shadow:0 30px 50px -26px rgba(0,0,20,.6)}
+.col2 img{width:100%;height:100%;object-fit:cover}
+.col2 .tag{position:absolute;left:18px;top:18px;background:var(--sun);color:var(--ink);font:700 13px var(--body);padding:7px 12px;z-index:2}
+
+/* doctors */
+.docs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.doc{background:#fff;border:1px solid var(--line);transition:.25s}
+.doc:hover{border-color:var(--blue);transform:translateY(-5px);box-shadow:0 26px 40px -26px rgba(39,84,255,.5)}
+.doc figure{aspect-ratio:4/3;overflow:hidden;background:var(--ice)}
+.doc img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.doc:hover img{transform:scale(1.04)}
+.doc .tx{padding:22px 24px 24px}
+.doc h3{font-size:22px}
+.doc .sp{color:var(--blue);font-weight:600;font-size:14.5px;margin-top:3px}
+.doc p{color:var(--mut);font-size:15px;margin-top:10px;line-height:1.5}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.tags span{font:600 12px var(--body);background:var(--bg);border:1px solid var(--line);padding:4px 9px;border-radius:5px;color:var(--mut)}
+
+/* first visit */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:#fff}
+.fs{padding:28px 26px 30px;border-left:1px solid var(--line);position:relative}
+.fs:first-child{border-left:0}
+.fs .n{display:block;font:800 52px var(--disp);letter-spacing:-.06em;color:var(--ice);line-height:1;-webkit-text-stroke:1.5px var(--blue)}
+.fs h3{font-size:20px;margin:18px 0 6px}
+.fs p{color:var(--mut);font-size:15px;line-height:1.5}
+.fs em{display:inline-block;font:600 12px var(--body);font-style:normal;background:var(--sun-s);padding:4px 10px;border-radius:5px;margin-top:14px}
+.fs::after{content:"";position:absolute;right:-8px;top:46px;width:15px;height:15px;background:#fff;border-top:1px solid var(--line);border-right:1px solid var(--line);transform:rotate(45deg);z-index:2}
+.fs:last-child::after{display:none}
+
+/* estimator */
+.est{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:start}
+.list{background:#fff;border:1px solid var(--line)}
+.er{display:grid;grid-template-columns:1fr auto;align-items:center;gap:6px 18px;padding:16px 22px;border-bottom:1px solid var(--line);transition:background .2s}
+.er:last-child{border-bottom:0}
+.er.on{background:var(--ice)}
+.er label{display:flex;align-items:center;gap:14px;cursor:pointer}
+.er input{position:absolute;opacity:0;pointer-events:none}
+.er .bx{flex:none;width:24px;height:24px;border:1.5px solid var(--mut);border-radius:6px;display:grid;place-items:center;background:#fff;transition:.2s}
+.er input:checked+.bx{background:var(--blue);border-color:var(--blue)}
+.er input:checked+.bx::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.er input:focus-visible+.bx{outline:3px solid var(--blue);outline-offset:2px}
+.er b{font:600 16.5px var(--body);display:block}
+.er small{color:var(--mut);font-size:13.5px}
+.er .rg{font:700 15px var(--disp);letter-spacing:-.02em;text-align:right;white-space:nowrap}
+.qty{grid-column:1/-1;display:flex;align-items:center;gap:10px;padding-left:38px;font-size:14px;color:var(--mut)}
+.qty .sp{display:inline-flex;border:1.5px solid var(--line);border-radius:8px;background:#fff;align-items:center}
+.qty button{width:34px;height:34px;font:700 18px var(--disp);border-radius:6px}
+.qty button:hover:not(:disabled){background:var(--ice)}
+.qty button:disabled{opacity:.35}
+.qty output{min-width:28px;text-align:center;font-weight:700;color:var(--ink)}
+.sum{background:var(--ink);color:#fff;padding:28px;position:sticky;top:96px}
+.sum h3{font-size:20px;color:#b9c5e0;font-weight:600;letter-spacing:-.01em}
+.sum .tot{font:800 clamp(28px,3vw,38px) var(--disp);letter-spacing:-.05em;line-height:1.1;margin:10px 0 4px}
+.sum .tot small{display:block;font:500 14px var(--body);letter-spacing:0;color:#b9c5e0;margin-top:6px}
+.sum ul{margin:18px 0;border-top:1px solid rgba(255,255,255,.16)}
+.sum li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:14.5px}
+.sum li span:last-child{color:#cfd9f0;white-space:nowrap}
+.sum .free{color:#2ee08b}
+.sum .nt{font-size:12.5px;color:#9fb0d0;margin:14px 0 18px;line-height:1.5}
+.sum .btn{width:100%}
+
+/* tips */
+.tips{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,84px);align-items:center}
+.tips figure{aspect-ratio:1/1;position:relative;isolation:isolate}
+.tips figure::before{content:"";position:absolute;inset:16px -16px -16px 16px;background:var(--sun);z-index:-1}
+.tips img{width:100%;height:100%;object-fit:cover;border:1px solid var(--line)}
+.tl{margin-top:26px;border-top:1px solid var(--line)}
+.tl li{display:grid;grid-template-columns:54px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.tl b{font:800 30px var(--disp);letter-spacing:-.05em;color:var(--blue);line-height:1}
+.tl h3{font-size:19px}.tl p{color:var(--mut);font-size:15.5px;margin-top:2px}
+
+/* testimonials */
+.tm{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(30px,5vw,70px);align-items:start}
+.big{font:800 clamp(80px,11vw,150px) var(--disp);letter-spacing:-.08em;line-height:.85}
+.tm .big+.str{font-size:22px;margin:16px 0 8px;letter-spacing:3px}
+.tm .sc p{color:var(--mut);font-size:15px}
+.qs{display:grid;gap:0;border:1px solid var(--line);background:#fff}
+.q{padding:28px 32px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:20px;transition:background .2s}
+.q:last-child{border-bottom:0}
+.q:hover{background:var(--ice)}
+.q .av{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font:700 18px var(--disp);color:#fff}
+.q p{font:500 19px/1.45 var(--body);letter-spacing:-.01em}
+.q small{display:block;margin-top:10px;color:var(--mut);font-size:14px}
+.q small b{color:var(--ink)}
+
+/* booking */
+.bk{display:grid;grid-template-columns:.85fr 1.15fr;gap:24px;align-items:start}
+.info{background:var(--ink);color:#fff;padding:32px}
+.info h3{font-size:26px;margin-bottom:6px}
+.info>p{color:#b9c5e0;font-size:15.5px}
+.info ul{margin:24px 0}
+.info li{display:grid;grid-template-columns:36px 1fr;gap:14px;padding:14px 0;border-top:1px solid rgba(255,255,255,.14);font-size:15.5px}
+.info li .i{color:var(--sun)}
+.info small{display:block;color:#9fb0d0;font:600 11.5px var(--body);letter-spacing:.12em;text-transform:uppercase}
+.hrs{display:grid;gap:0}
+.hrs div{display:flex;justify-content:space-between;padding:7px 10px;font-size:14.5px;color:#cfd9f0}
+.hrs div.today{background:rgba(255,255,255,.12);color:#fff;font-weight:600}
+.emg{margin-top:22px;background:var(--sun);color:var(--ink);padding:16px 18px;font-size:14.5px;line-height:1.45}
+.emg b{display:block;font:700 16px var(--disp);letter-spacing:-.02em}
+.form{background:#fff;border:1px solid var(--line);padding:clamp(24px,3.6vw,40px)}
+.form h3{font-size:26px;margin-bottom:22px}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f{display:grid;gap:7px;align-content:start}.f.w{grid-column:1/-1}
+.f label,.f .l{font:600 13px var(--body)}
+.f input,.f select,.f textarea{width:100%;border:1.5px solid var(--line);border-radius:8px;padding:13px 14px;background:#fff;transition:.2s}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(39,84,255,.18)}
+.f textarea{min-height:88px;resize:vertical}
+.slots{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.sl{padding:11px 0;border:1.5px solid var(--line);border-radius:8px;background:#fff;font-weight:600;font-size:14.5px;transition:.2s}
+.sl:hover:not(:disabled){border-color:var(--blue)}
+.sl:disabled{opacity:.4;text-decoration:line-through;cursor:not-allowed}
+.sl[aria-pressed=true]{background:var(--blue);border-color:var(--blue);color:#fff}
+.hint{font-size:13.5px;color:var(--mut)}
+.err{font-size:13.5px;color:#C0262D;font-weight:600}
+.form .btn{width:100%;margin-top:22px}
+.form .nt{display:block;text-align:center;font-size:12.5px;color:var(--mut);margin-top:12px}
+.ok{text-align:center;padding:clamp(20px,4vw,40px) 0;animation:pop .5s}
+.ok .ck{width:76px;height:76px;margin:0 auto 18px;border-radius:50%;background:var(--ok);color:#fff;display:grid;place-items:center}
+.ok .ck svg{width:40px;height:40px}
+.ok h3{font-size:30px}
+.ok p{color:var(--mut);margin:8px auto 0;max-width:420px}
+.ok .sm{max-width:440px;margin:22px auto;border:1px solid var(--line);text-align:left}
+.ok .sm div{display:flex;justify-content:space-between;gap:14px;padding:11px 16px;border-bottom:1px solid var(--line);font-size:15px}
+.ok .sm div:last-child{border:0}
+.ok .sm span{color:var(--mut)}
+.ok .code{display:inline-block;background:var(--sun-s);padding:6px 14px;border-radius:6px;font:700 15px var(--disp);letter-spacing:.06em;margin-bottom:6px}
+
+/* faq */
+.fq{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(24px,4vw,56px)}
+details{border-bottom:1px solid var(--line)}
+details:first-child{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font:600 18px var(--disp);letter-spacing:-.02em}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";flex:none;width:32px;height:32px;border:1.5px solid var(--line);border-radius:8px;display:grid;place-items:center;font:500 22px var(--body);transition:.25s}
+details[open] summary::after{content:"−";background:var(--blue);border-color:var(--blue);color:#fff}
+details p{padding:0 48px 22px 0;color:var(--mut);animation:pop .4s}
+
+/* cta + footer */
+.cta2{background:var(--blue);color:#fff;position:relative;overflow:hidden}
+.cta2::before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.1)}
+.cta2 .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,80px);align-items:center;padding:clamp(56px,7vw,92px) 0}
+.cta2 h2{font-size:clamp(34px,4.6vw,62px)}
+.cta2 p{color:#d4defd;margin-top:16px;max-width:460px}
+.cb{background:#fff;color:var(--ink);padding:28px;box-shadow:0 30px 50px -28px rgba(0,0,40,.7)}
+.cb h3{font-size:21px;margin-bottom:16px}
+.cb .f{margin-bottom:12px}
+.cb .btn{width:100%;margin-top:6px}
+.cb .done{text-align:center;padding:14px 0;animation:pop .4s}
+.cb .done b{display:block;font:700 22px var(--disp);letter-spacing:-.03em;margin-bottom:4px}
+.cb .done span{color:var(--mut);font-size:15px}
+footer.ft{background:var(--ink);color:#b9c5e0;padding:60px 0 26px}
+.fg4{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px}
+footer .logo{color:#fff}
+.fg4 p{margin-top:14px;max-width:300px;font-size:15px}
+.fg4 h4{font:600 12.5px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--sun);margin-bottom:14px}
+.fg4 li{margin-bottom:9px;font-size:15px}
+.fg4 a:hover{color:#fff}
+.fbar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:40px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);font-size:13.5px;color:#8da0c4}
+.mbar{display:none}
+
+@media(max-width:980px){
+  .links{display:none}.burger{display:block}
+  header.open .links{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);padding:12px 20px 18px;box-shadow:0 24px 40px -24px rgba(10,23,48,.4)}
+  header.open .links a{padding:13px 8px;font-size:17px}
+  .bar>.btn{display:none}
+  .hero,.why .wrap,.tips,.tm,.bk,.est,.cta2 .wrap{grid-template-columns:1fr}
+  .stack{justify-self:center}
+  .stats{grid-template-columns:1fr 1fr}.st:nth-child(3){border-left:0}.st:nth-child(n+3){border-top:1px solid var(--line)}
+  .sh{grid-template-columns:1fr;gap:14px}
+  .svc{grid-template-columns:1fr}
+  .rows{display:flex;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line);scrollbar-width:thin}
+  .row{flex:none;width:auto;grid-template-columns:auto;padding:15px 20px;border-bottom:0;border-right:1px solid var(--line);white-space:nowrap}
+  .row .n,.row small,.row .pr,.row .ar{display:none}
+  .docs{grid-template-columns:1fr;max-width:480px;margin-inline:auto}
+  .flow{grid-template-columns:1fr 1fr}.fs:nth-child(3){border-left:0}.fs:nth-child(n+3){border-top:1px solid var(--line)}.fs::after{display:none}
+  .sum{position:static}
+  .fq{grid-template-columns:1fr}details:nth-child(2){border-top:0}
+  .fg4{grid-template-columns:1fr 1fr}
+  .tips figure{max-width:420px}
+}
+@media(max-width:720px){
+  body{font-size:16px}
+  .top .hide,.top small{display:none}
+  .m3{grid-template-columns:1fr}.m3>div{border-left:0;border-top:1px solid var(--line)}.m3>div:first-child{border-top:0}
+  .det .tx{padding:22px 20px 24px}
+  .flow{grid-template-columns:1fr}.fs{border-left:0;border-top:1px solid var(--line)}.fs:first-child{border-top:0}
+  .fg{grid-template-columns:1fr}
+  .slots{grid-template-columns:repeat(4,1fr)}
+  .er{padding:14px 16px}.qty{padding-left:36px}
+  .q{grid-template-columns:1fr;padding:22px}
+  .fg4{grid-template-columns:1fr}
+  .m1::before,.tips figure::before{inset:12px -10px -12px 12px}
+  .stk{width:104px;height:104px;font-size:13px}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:70;background:#fff;border-top:1px solid var(--line);padding:10px 14px;gap:10px;align-items:center;justify-content:space-between;transform:translateY(110%);transition:.35s;box-shadow:0 -12px 30px -18px rgba(10,23,48,.4)}
+  .mbar.on{transform:none}
+  .mbar span{font-size:13px;line-height:1.3;color:var(--mut)}.mbar span b{display:block;color:var(--ink);font:700 14.5px var(--disp)}
+  footer.ft{padding-bottom:90px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="tooth" viewBox="0 0 24 24"><path d="M7.5 4.2c-2.5 0-4 1.8-4 4.4 0 2.2.9 3.4 1.4 5.2.5 2 .6 6.6 2.6 6.6 1.9 0 1.5-4.1 3-5.6.5-.5.9-.6 1.5-.6s1 .1 1.5.6c1.5 1.5 1.1 5.6 3 5.6 2 0 2.1-4.600 2.600-6.600.5-1.800 1.400-3 1.400-5.200 0-2.600-1.500-4.400-4-4.400-1.600 0-2.600.9-4.500.9s-2.900-.9-4.500-.9z" fill="none" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/><path d="M19.600 1.200l.8 1.900 1.900.8-1.900.8-.8 1.900-.8-1.900-1.900-.8 1.900-.8z" fill="#FFC93C"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="M5 12.500l4.500 4.500L19 7.500" fill="none" stroke="currentColor" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.500 7-12a7 7 0 10-14 0c0 5.500 7 12 7 12z"/><circle cx="12" cy="10" r="2.500"/></g></symbol>
+    <symbol id="phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linejoin="round"/></symbol>
+    <symbol id="shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.500 8-8 9-4.500-1-8-4-8-9V6z"/><path d="M8.500 12l2.500 2.500 4.500-5"/></g></symbol>
+    <symbol id="doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/></g></symbol>
+    <symbol id="spark" viewBox="0 0 24 24"><path d="M12 3l1.800 5.200L19 10l-5.200 1.800L12 17l-1.800-5.200L5 10l5.200-1.800z" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<div class="top"><div class="wrap">
+  <span><svg class="i"><use href="#phone"/></svg>Darurat gigi? Telepon (021) 555-0100 <small style="opacity:.7">(nomor contoh)</small></span>
+  <span class="hide"><span class="dot" id="dot"></span><b id="openTxt" style="font-weight:600;color:#fff">Memeriksa jam buka…</b></span>
+</div></div>
+
+<header class="hd" id="hd"><div class="wrap bar">
+  <a class="logo" href="#top" aria-label="Kilau Dental"><i><svg viewBox="0 0 24 24"><use href="#tooth"/></svg></i>kilau</a>
+  <nav class="links" aria-label="Menu utama">
+    <a href="#layanan">Layanan</a><a href="#dokter">Dokter</a><a href="#kunjungan">Kunjungan</a><a href="#biaya">Estimasi biaya</a><a href="#faq">FAQ</a>
+  </nav>
+  <a class="btn p" href="#janji">Buat janji</a>
+  <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false"><b></b><b></b></button>
+</div></header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="wrap hero">
+  <div>
+    <span class="eyebrow">Klinik gigi keluarga</span>
+    <h1>Senyum sehat, <mark>tanpa rasa takut.</mark></h1>
+    <p class="lead">Dokter yang menjelaskan setiap langkah, alat steril sekali pakai, dan harga yang disepakati sebelum perawatan dimulai.</p>
+    <div class="cta">
+      <a class="btn p" href="#janji">Buat janji online <svg class="i"><use href="#arrow"/></svg></a>
+      <a class="btn g" href="#biaya">Hitung estimasi biaya</a>
+    </div>
+    <ul class="ticks">
+      <li><svg class="i"><use href="#check"/></svg>Konsultasi dan pemeriksaan pertama gratis</li>
+      <li><svg class="i"><use href="#check"/></svg>Rencana dan harga tertulis sebelum mulai</li>
+      <li><svg class="i"><use href="#check"/></svg>Anestesi topikal agar nyaman sejak awal</li>
+    </ul>
+  </div>
+  <div class="stack">
+    <figure class="m1"><img src="img/hero-dokter-pasien.jpg" width="1400" height="1050" fetchpriority="high" alt="Dokter gigi menunjukkan hasil rontgen panoramik di layar kepada pasien yang duduk di kursi periksa"></figure>
+    <figure class="m2"><img src="img/dokter-bedah.jpg" width="1000" height="1500" alt="Dokter gigi dengan masker dan kaca pembesar sedang merawat gigi pasien"></figure>
+    <div class="rate"><b>4,9</b><div><div class="str" aria-label="Rating 4,9 dari 5">★★★★★</div><small>2.300+ ulasan pasien</small></div></div>
+    <div class="stk">Konsultasi pertama GRATIS</div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="wrap" style="padding-bottom:clamp(64px,8vw,108px)">
+  <div class="stats rv">
+    <div class="st"><b><span data-count="14">14</span><em>+</em></b><small>Tahun melayani keluarga</small></div>
+    <div class="st"><b><span data-count="18000">18.000</span><em>+</em></b><small>Pasien telah dirawat</small></div>
+    <div class="st"><b><span data-count="4.9" data-dec="1">4,9</span></b><small>Rating rata-rata</small></div>
+    <div class="st"><b><span data-count="9">9</span></b><small>Dokter gigi dan spesialis</small></div>
+  </div>
+</section>
+
+<!-- LAYANAN -->
+<section class="sec" id="layanan"><div class="wrap">
+  <div class="sh">
+    <div><span class="lb rv"><b>01</b>Layanan</span><h2 class="rv">Satu klinik, semua perawatan gigi.</h2></div>
+    <p class="rv">Pilih salah satu layanan untuk melihat apa yang terjadi saat kunjungan, lama perawatan, dan biaya awalnya.</p>
+  </div>
+  <div class="svc rv">
+    <div class="rows" id="rows" role="tablist" aria-label="Pilih layanan" aria-orientation="vertical"></div>
+    <div class="det" id="det" role="tabpanel" aria-live="polite"></div>
+  </div>
+</div></section>
+
+<!-- KENAPA KILAU -->
+<section class="why" id="fasilitas"><div class="wrap" style="padding:clamp(64px,8vw,104px) 0">
+  <div>
+    <span class="lb rv"><b>02</b>Kenapa Kilau</span>
+    <h2 class="rv">Dirancang agar Anda tenang.</h2>
+    <ul class="pts">
+      <li class="rv"><i><svg class="i"><use href="#shield"/></svg></i><div><b>Minim rasa sakit</b><span>Anestesi topikal sebelum suntik bius, dan dokter bekerja pelan dengan teknik yang lembut.</span></div></li>
+      <li class="rv" style="--d:1"><i><svg class="i"><use href="#doc"/></svg></i><div><b>Transparan</b><span>Rencana perawatan dan rincian harga ditulis dan disepakati sebelum tindakan dimulai.</span></div></li>
+      <li class="rv" style="--d:2"><i><svg class="i"><use href="#spark"/></svg></i><div><b>Steril</b><span>Alat sekali pakai dan sterilisasi autoklaf untuk setiap pasien, bisa Anda lihat langsung.</span></div></li>
+    </ul>
+  </div>
+  <div class="col2 rv">
+    <div class="a"><span class="tag">Ruang periksa privat</span><img src="img/klinik-oranye.jpg" width="1400" height="933" loading="lazy" alt="Ruang periksa gigi yang terang dengan kursi periksa oranye dan jendela besar"></div>
+    <div class="b"><img src="img/klinik-putih.jpg" width="1400" height="936" loading="lazy" alt="Klinik gigi bersih berwarna putih dengan kursi periksa dan peralatan modern"></div>
+  </div>
+</div></section>
+
+<!-- DOKTER -->
+<section class="sec" id="dokter"><div class="wrap">
+  <div class="sh">
+    <div><span class="lb rv"><b>03</b>Dokter</span><h2 class="rv">Tim yang sabar dan berpengalaman.</h2></div>
+    <p class="rv">Setiap dokter menjelaskan kondisi gigi Anda dengan bahasa yang mudah dipahami, tanpa istilah yang membingungkan.</p>
+  </div>
+  <div class="docs">
+    <article class="doc rv"><figure><img src="img/dokter-ramah.jpg" width="1000" height="730" loading="lazy" alt="Dokter gigi perempuan tersenyum ramah" style="object-position:50% 20%"></figure><div class="tx"><h3>drg. Nadia Prameswari</h3><p class="sp">Dokter gigi umum dan estetik</p><p>Fokus pada scaling, tambal, dan pemutihan gigi dengan hasil yang natural.</p><div class="tags"><span>Senin – Jumat</span><span>Bahasa Indonesia</span><span>English</span></div></div></article>
+    <article class="doc rv" style="--d:1"><figure><img src="img/dokter-pria.jpg" width="900" height="675" loading="lazy" alt="Dokter laki-laki tersenyum dengan stetoskop di leher" style="object-position:50% 25%"></figure><div class="tx"><h3>drg. Reza Mahendra, Sp.BM</h3><p class="sp">Spesialis bedah mulut</p><p>Menangani pencabutan gigi bungsu dan tindakan bedah dengan pendekatan yang tenang.</p><div class="tags"><span>Selasa, Kamis, Sabtu</span><span>Bahasa Indonesia</span></div></div></article>
+    <article class="doc rv" style="--d:2"><figure><img src="img/dokter-senior.jpg" width="1100" height="733" loading="lazy" alt="Dokter perempuan senior berjas putih tersenyum di taman" style="object-position:50% 30%"></figure><div class="tx"><h3>drg. Maya Kusuma, Sp.KGA</h3><p class="sp">Spesialis gigi anak</p><p>Mengajak si kecil kenalan dulu dengan alat-alatnya sehingga kunjungan terasa seperti bermain.</p><div class="tags"><span>Senin – Rabu, Sabtu</span><span>Bahasa Indonesia</span></div></div></article>
+  </div>
+</div></section>
+
+<!-- KUNJUNGAN PERTAMA -->
+<section class="sec" id="kunjungan"><div class="wrap">
+  <div class="sh">
+    <div><span class="lb rv"><b>04</b>Kunjungan pertama</span><h2 class="rv">Empat langkah, tanpa kejutan.</h2></div>
+    <p class="rv">Anda selalu tahu apa yang akan dilakukan dan berapa biayanya, sebelum dokter mulai merawat.</p>
+  </div>
+  <ol class="flow rv">
+    <li class="fs"><span class="n">1</span><h3>Booking online</h3><p>Pilih layanan, tanggal, dan jam yang kosong. Tidak perlu telepon.</p><em>1 menit</em></li>
+    <li class="fs"><span class="n">2</span><h3>Pemeriksaan</h3><p>Dokter memeriksa gigi dan gusi, dengan rontgen bila diperlukan.</p><em>20 menit · gratis</em></li>
+    <li class="fs"><span class="n">3</span><h3>Rencana dan harga</h3><p>Dokter menjelaskan pilihan perawatan. Rincian harga ditulis dan disepakati.</p><em>10 menit</em></li>
+    <li class="fs"><span class="n">4</span><h3>Perawatan</h3><p>Bisa langsung dikerjakan hari itu atau dijadwalkan sesuai kenyamanan Anda.</p><em>Sesuai kebutuhan</em></li>
+  </ol>
+</div></section>
+
+<!-- ESTIMASI BIAYA -->
+<section class="sec" id="biaya"><div class="wrap">
+  <div class="sh">
+    <div><span class="lb rv"><b>05</b>Estimasi biaya</span><h2 class="rv">Hitung dulu, tenang kemudian.</h2></div>
+    <p class="rv">Centang tindakan yang Anda butuhkan untuk melihat kisaran biayanya. Angka pasti ditentukan dokter setelah pemeriksaan.</p>
+  </div>
+  <div class="est">
+    <div class="list rv" id="est"></div>
+    <aside class="sum rv" aria-live="polite">
+      <h3>Perkiraan total</h3>
+      <div class="tot" id="tot">Rp 0<small>Centang tindakan yang Anda butuhkan</small></div>
+      <ul id="lines"><li><span>Konsultasi dan pemeriksaan pertama</span><span class="free">Gratis</span></li></ul>
+      <p class="nt">Ini hanya estimasi untuk gambaran awal, bukan penawaran. Harga di halaman ini contoh untuk demo.</p>
+      <button type="button" class="btn y" id="useEst" disabled>Booking dengan pilihan ini <svg class="i"><use href="#arrow"/></svg></button>
+    </aside>
+  </div>
+</div></section>
+
+<!-- TIPS -->
+<section class="sec" id="tips"><div class="wrap tips">
+  <figure class="rv"><img src="img/sikat-bambu.jpg" width="1100" height="1100" loading="lazy" alt="Dua sikat gigi bambu dalam gelas kaca di samping ranting eukaliptus"></figure>
+  <div>
+    <span class="lb rv"><b>06</b>Rawat di rumah</span>
+    <h2 class="rv" style="font-size:clamp(32px,4.2vw,54px);margin-top:16px">Tiga kebiasaan kecil, gigi lebih kuat.</h2>
+    <ul class="tl">
+      <li class="rv"><b>01</b><div><h3>Sikat 2 menit, 2 kali sehari</h3><p>Gunakan pasta gigi berfluoride dan sikat dengan gerakan lembut, bukan menggosok keras.</p></div></li>
+      <li class="rv" style="--d:1"><b>02</b><div><h3>Bersihkan sela gigi tiap malam</h3><p>Benang gigi atau sikat sela menjangkau bagian yang tidak tersentuh sikat biasa.</p></div></li>
+      <li class="rv" style="--d:2"><b>03</b><div><h3>Kontrol 6 bulan sekali</h3><p>Masalah kecil lebih murah dan lebih nyaman ditangani sebelum terasa sakit.</p></div></li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- ULASAN -->
+<section class="sec" id="ulasan"><div class="wrap tm">
+  <div class="sc rv"><span class="lb"><b>07</b>Kata pasien</span><div class="big" style="margin-top:26px"><span data-count="4.9" data-dec="1">4,9</span></div><div class="str">★★★★★</div><p>dari 2.300+ ulasan pasien</p></div>
+  <div class="qs rv">
+    <article class="q"><div class="av" style="background:var(--blue)">R</div><div><p>“Pertama kali ke dokter gigi tanpa deg-degan. Dokternya menjelaskan semuanya dulu, dan scaling-nya hampir tidak terasa.”</p><small><b>Rina A.</b> · Karyawan swasta · Scaling</small></div></article>
+    <article class="q"><div class="av" style="background:#E2A400;color:var(--ink)">B</div><div><p>“Anak saya biasanya menangis, di sini malah minta kontrol lagi. Dokternya sabar sekali.”</p><small><b>Bayu S.</b> · Orang tua · Gigi anak</small></div></article>
+    <article class="q"><div class="av" style="background:var(--ink)">D</div><div><p>“Estimasi biaya di awal sangat membantu. Tidak ada kejutan di akhir, semua sesuai yang tertulis.”</p><small><b>Dewi M.</b> · Guru · Perawatan saluran akar</small></div></article>
+  </div>
+</div></section>
+
+<!-- JANJI -->
+<section class="sec" id="janji"><div class="wrap">
+  <div class="sh">
+    <div><span class="lb rv"><b>08</b>Buat janji</span><h2 class="rv">Pilih jam yang nyaman untuk Anda.</h2></div>
+    <p class="rv">Isi formulir singkat ini. Tim kami akan mengonfirmasi lewat WhatsApp sebelum jadwal Anda.</p>
+  </div>
+  <div class="bk">
+    <aside class="info rv">
+      <h3>Kilau Dental</h3>
+      <p>Klinik gigi keluarga. Parkir luas dan ramah kursi roda.</p>
+      <ul>
+        <li><svg class="i"><use href="#pin"/></svg><div><small>Alamat</small>Jl. Anggrek No. 21, Kota Contoh</div></li>
+        <li><svg class="i"><use href="#phone"/></svg><div><small>Telepon / WhatsApp</small>(021) 555-0100 · 0812-0000-0000</div></li>
+        <li><svg class="i"><use href="#clock"/></svg><div style="width:100%"><small>Jam praktik</small><div class="hrs" id="hrs"><div data-d="1-6"><span>Senin – Sabtu</span><span>09.00 – 20.00</span></div><div data-d="0"><span>Minggu</span><span>09.00 – 15.00</span></div></div></div></li>
+      </ul>
+      <div class="emg"><b>Sakit gigi mendadak?</b>Datang langsung di jam praktik. Kasus nyeri akut kami dahulukan.</div>
+    </aside>
+    <div class="form rv" style="--d:1">
+      <form id="form" novalidate>
+        <h3>Atur jadwal Anda</h3>
+        <div class="fg">
+          <div class="f"><label for="nama">Nama lengkap</label><input id="nama" name="nama" required minlength="2" autocomplete="name" placeholder="Nama Anda"></div>
+          <div class="f"><label for="wa">Nomor WhatsApp</label><input id="wa" name="wa" type="tel" required pattern="[0-9+\s\-]{9,16}" inputmode="tel" autocomplete="tel" placeholder="08xx xxxx xxxx"></div>
+          <div class="f w"><label for="svc">Layanan</label><select id="svc" name="svc" required></select></div>
+          <div class="f"><label for="tgl">Tanggal</label><input id="tgl" name="tgl" type="date" required></div>
+          <div class="f"><label for="untuk">Untuk</label><select id="untuk" name="untuk"><option>Dewasa</option><option>Anak (di bawah 12 tahun)</option></select></div>
+          <div class="f w"><span class="l" id="jl">Jam</span><div class="slots" id="slots" role="group" aria-labelledby="jl"></div><p class="hint" id="slotHint">Pilih tanggal dulu, nanti jam yang kosong muncul di sini.</p><p class="err" id="slotErr" hidden></p></div>
+          <div class="f w"><label for="kel">Keluhan (opsional)</label><textarea id="kel" name="kel" placeholder="Contoh: gigi geraham kiri bawah ngilu saat minum dingin"></textarea></div>
+        </div>
+        <button class="btn p" type="submit">Kirim permintaan janji <svg class="i"><use href="#arrow"/></svg></button>
+        <small class="nt">Halaman demo: data tidak dikirim ke mana pun.</small>
+      </form>
+      <div class="ok" id="ok" hidden>
+        <div class="ck"><svg><use href="#check"/></svg></div>
+        <span class="code" id="code"></span>
+        <h3>Terima kasih, <span id="okn"></span>.</h3>
+        <p>Permintaan janji Anda sudah kami catat. Konfirmasi dikirim lewat WhatsApp. Mohon datang 10 menit lebih awal.</p>
+        <div class="sm" id="sm"></div>
+        <button type="button" class="btn g" id="again">Buat janji lain</button>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section class="sec" id="faq"><div class="wrap">
+  <div class="sh">
+    <div><span class="lb rv"><b>09</b>FAQ</span><h2 class="rv">Pertanyaan yang sering muncul.</h2></div>
+    <p class="rv">Tidak menemukan jawabannya? Tanyakan saja saat booking, tim kami senang membantu.</p>
+  </div>
+  <div class="fq rv">
+    <div>
+      <details open><summary>Apakah perawatan gigi terasa sakit?</summary><p>Kami memakai anestesi topikal lalu bius lokal. Sebagian besar perawatan hanya terasa seperti tekanan, bukan nyeri. Bila Anda tidak nyaman, angkat tangan dan dokter berhenti.</p></details>
+      <details><summary>Berapa lama kunjungan pertama?</summary><p>Sekitar 30 sampai 45 menit, termasuk pemeriksaan, rontgen bila perlu, dan penjelasan rencana perawatan.</p></details>
+      <details><summary>Apakah konsultasi pertama benar-benar gratis?</summary><p>Ya. Konsultasi dan pemeriksaan pertama gratis. Rontgen dan tindakan dikenakan biaya sesuai rincian yang disepakati lebih dulu.</p></details>
+    </div>
+    <div>
+      <details><summary>Bagaimana dengan gigi anak?</summary><p>Ada dokter gigi anak yang mengajak si kecil kenalan dulu dengan alat-alatnya. Kontrol pertama disarankan sejak usia 2 tahun.</p></details>
+      <details><summary>Pembayaran bisa pakai apa?</summary><p>Tunai, transfer, QRIS, serta kartu debit dan kredit. Beberapa asuransi swasta diterima, tanyakan ke tim kami saat booking.</p></details>
+      <details><summary>Kalau gigi sakit mendadak?</summary><p>Datang langsung di jam praktik tanpa perlu janji. Kasus nyeri akut kami dahulukan.</p></details>
+    </div>
+  </div>
+</div></section>
+
+<!-- CTA -->
+<section class="cta2"><div class="wrap">
+  <div>
+    <h2 class="rv">Senyum sehat dimulai dari satu kunjungan.</h2>
+    <p class="rv">Belum yakin? Tinggalkan nomor Anda dan kami hubungi kembali untuk menjawab pertanyaan tanpa kewajiban apa pun.</p>
+  </div>
+  <div class="cb rv">
+    <form id="cbForm">
+      <h3>Minta dihubungi</h3>
+      <div class="f"><label for="cn">Nama</label><input id="cn" required minlength="2" placeholder="Nama Anda"></div>
+      <div class="f"><label for="cw">Nomor WhatsApp</label><input id="cw" type="tel" required pattern="[0-9+\s\-]{9,16}" inputmode="tel" placeholder="08xx xxxx xxxx"></div>
+      <button class="btn p" type="submit">Hubungi saya kembali</button>
+    </form>
+    <div class="done" id="cbDone" hidden><b>Terima kasih!</b><span>Tim kami akan menghubungi Anda di jam praktik. (Demo, tidak ada data terkirim.)</span></div>
+  </div>
+</div></section>
+</main>
+
+<footer class="ft"><div class="wrap">
+  <div class="fg4">
+    <div><a class="logo" href="#top"><i><svg viewBox="0 0 24 24"><use href="#tooth"/></svg></i>kilau</a><p>Klinik gigi keluarga yang menjelaskan, mendengarkan, dan merawat dengan sabar.</p></div>
+    <div><h4>Jelajah</h4><ul><li><a href="#layanan">Layanan</a></li><li><a href="#dokter">Dokter</a></li><li><a href="#kunjungan">Kunjungan pertama</a></li><li><a href="#biaya">Estimasi biaya</a></li></ul></div>
+    <div><h4>Bantuan</h4><ul><li><a href="#janji">Buat janji</a></li><li><a href="#faq">FAQ</a></li><li><a href="#ulasan">Ulasan</a></li></ul></div>
+    <div><h4>Kontak</h4><ul><li>halo@kilau.example</li><li>(021) 555-0100</li><li>Senin – Sabtu 09.00 – 20.00</li><li>Minggu 09.00 – 15.00</li></ul></div>
+  </div>
+  <div class="fbar"><span>© <span id="yr">2026</span> Kilau Dental</span><span>Halaman demo: nama, harga, dokter, dan data hanya contoh. Foto dari Unsplash.</span></div>
+</div></footer>
+
+<div class="mbar" id="mbar"><span><b id="mOpen">Buka hari ini</b>Konsultasi pertama gratis</span><a class="btn p" href="#janji" style="padding:12px 20px">Buat janji</a></div>
+
+<script>
+document.documentElement.classList.add('js');
+const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const pad=n=>String(n).padStart(2,'0');
+const K=n=>n>=1000?(n/1000).toLocaleString('id-ID',{maximumFractionDigits:1})+' jt':n+' rb';
+const R=n=>'Rp '+K(n);
+
+/* header */
+const hd=$('#hd'),burger=$('#burger'),mbar=$('#mbar');
+burger.addEventListener('click',()=>{const o=hd.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+$$('.links a').forEach(a=>a.addEventListener('click',()=>{hd.classList.remove('open');burger.setAttribute('aria-expanded','false')}));
+addEventListener('scroll',()=>mbar.classList.toggle('on',scrollY>520),{passive:true});
+
+/* jam praktik: 0=Minggu */
+const HRS=d=>d===0?[9,15]:[9,20];
+function openState(){
+  const n=new Date(),h=HRS(n.getDay()),t=n.getHours()+n.getMinutes()/60;
+  if(t>=h[0]&&t<h[1])return{on:true,txt:`Buka sekarang · tutup ${pad(h[1])}.00`,short:`Buka sampai ${pad(h[1])}.00`};
+  const nx=t<h[0]?n:new Date(n.getTime()+864e5),nh=HRS(nx.getDay());
+  const when=t<h[0]?'hari ini':'besok';
+  return{on:false,txt:`Tutup · buka ${when} ${pad(nh[0])}.00`,short:`Buka ${when} ${pad(nh[0])}.00`};
+}
+(function(){const s=openState();$('#openTxt').textContent=s.txt;$('#dot').classList.toggle('on',s.on);$('#mOpen').textContent=s.short;
+  const d=new Date().getDay();$$('#hrs div').forEach(r=>{const[a,b]=r.dataset.d.split('-').map(Number);const hit=b===undefined?d===a:(d>=a&&d<=b);r.classList.toggle('today',hit)})})();
+
+/* layanan */
+const SV=[
+ {n:'Pemeriksaan & scaling',s:'Bersihkan karang gigi',img:'cermin-steril.jpg',alt:'Dokter gigi bermasker memegang kaca dan sonde untuk memeriksa gigi',from:350,dur:'45 menit',pain:1,d:'Pemeriksaan menyeluruh gigi, gusi, dan rongga mulut, dilanjutkan pembersihan karang gigi dengan alat ultrasonik yang lembut.',st:['Pemeriksaan gigi dan gusi','Scaling ultrasonik','Poles dan aplikasi fluoride']},
+ {n:'Tambal gigi',s:'Gigi berlubang',img:'hero-dokter-pasien.jpg',alt:'Dokter gigi menjelaskan hasil pemeriksaan kepada pasien di kursi periksa',from:250,dur:'30–45 menit',pain:1,d:'Bagian gigi yang berlubang dibersihkan lalu ditambal dengan bahan sewarna gigi supaya hasilnya natural dan kuat.',st:['Bius lokal bila diperlukan','Bersihkan jaringan yang rusak','Tambal dan haluskan gigitan']},
+ {n:'Pemutihan gigi',s:'Senyum lebih cerah',img:'senyum-wanita.jpg',alt:'Perempuan tersenyum lebar menunjukkan gigi yang putih',from:1800,dur:'60 menit',pain:1,d:'Pemutihan di klinik untuk menyamarkan noda kopi dan teh. Hasil terlihat dalam satu kunjungan.',st:['Scaling awal','Aplikasi gel pemutih','Perlindungan gusi dan perawatan']},
+ {n:'Behel & aligner',s:'Gigi lebih rapi',img:'aligner.jpg',alt:'Perempuan memasang aligner bening di giginya',from:7000,dur:'Kontrol bulanan',pain:2,d:'Pilih behel logam, behel keramik, atau aligner bening. Dokter membuat rencana dan simulasi sebelum perawatan dimulai.',st:['Rontgen dan cetak gigi','Rencana dan simulasi hasil','Kontrol rutin tiap 4–6 minggu']},
+ {n:'Cabut gigi & gigi bungsu',s:'Aman dan terkontrol',img:'dokter-bedah.jpg',alt:'Dokter gigi bedah dengan kaca pembesar dan masker saat tindakan',from:300,dur:'20–60 menit',pain:2,d:'Pencabutan dengan bius lokal. Untuk gigi bungsu, dokter bedah mulut menilai posisinya lewat rontgen panoramik terlebih dulu.',st:['Rontgen bila perlu','Bius lokal','Pencabutan dan jahit bila perlu','Panduan perawatan di rumah']},
+ {n:'Perawatan saluran akar',s:'Selamatkan gigi asli',img:'rontgen.jpg',alt:'Dokter gigi memeriksa film rontgen gigi di depan lampu',from:1200,dur:'1–3 kunjungan',pain:2,d:'Jaringan saraf yang terinfeksi dibersihkan agar gigi asli tetap bisa dipertahankan dan tidak sakit lagi.',st:['Rontgen dan diagnosis','Pembersihan saluran akar','Pengisian dan penambalan akhir']},
+ {n:'Implan & mahkota',s:'Ganti gigi yang hilang',img:'scan-digital.jpg',alt:'Tangan bersarung menunjuk hasil pindai 3D gigi di layar tablet',from:2000,dur:'Bertahap',pain:2,d:'Mahkota untuk gigi yang rusak dan implan untuk gigi yang hilang, direncanakan lewat pindai digital 3D agar presisi.',st:['Pindai 3D','Perencanaan bersama dokter','Pemasangan','Pemasangan mahkota akhir']},
+ {n:'Gigi anak',s:'Ramah untuk si kecil',img:'sikat-pink.jpg',alt:'Sikat gigi anak berwarna merah muda di atas latar kuning',from:150,dur:'30 menit',pain:0,d:'Dokter gigi anak mengajak si kecil kenalan dulu dengan alat-alatnya. Tersedia fluoride, sealant, dan tambal untuk anak.',st:['Perkenalan alat','Pemeriksaan ringan','Fluoride dan sealant']}
+];
+const PAIN=['Tanpa rasa sakit','Sangat ringan','Ringan, dengan bius'];
+const rows=$('#rows'),det=$('#det');
+rows.innerHTML=SV.map((s,i)=>`<button type="button" class="row" role="tab" id="tab${i}" data-i="${i}" aria-selected="${i===0}" aria-controls="det" tabindex="${i===0?0:-1}"><span class="n">${pad(i+1)}</span><span><h3>${s.n}</h3><small>${s.s}</small></span><span class="pr">mulai ${R(s.from)}</span><svg class="i ar"><use href="#arrow"/></svg></button>`).join('');
+function showSv(i,focus){
+  const s=SV[i];
+  $$('.row',rows).forEach((r,k)=>{r.setAttribute('aria-selected',k===i);r.tabIndex=k===i?0:-1});
+  det.setAttribute('aria-labelledby','tab'+i);
+  det.innerHTML=`<figure><img src="img/${s.img}" alt="${s.alt}"></figure><div class="tx"><h3>${s.n}</h3><p>${s.d}</p><div class="m3"><div><small>Durasi</small><b>${s.dur}</b></div><div><small>Biaya awal</small><b>${R(s.from)}</b></div><div><small>Kenyamanan</small><b><span class="bars" aria-hidden="true">${[0,1,2].map(k=>`<i class="${k<(3-s.pain)?'f':''}"></i>`).join('')}</span>${PAIN[s.pain]}</b></div></div><ol class="stp">${s.st.map(x=>`<li>${x}</li>`).join('')}</ol><a class="btn p" href="#janji" data-svc="${s.n}">Buat janji untuk layanan ini <svg class="i"><use href="#arrow"/></svg></a></div>`;
+  if(focus)$('#tab'+i).focus();
+}
+rows.addEventListener('click',e=>{const b=e.target.closest('.row');if(b)showSv(+b.dataset.i)});
+rows.addEventListener('keydown',e=>{
+  const cur=+($('.row[aria-selected=true]',rows).dataset.i),vert=matchMedia('(min-width:981px)').matches;
+  const nxt=(vert?'ArrowDown':'ArrowRight'),prv=(vert?'ArrowUp':'ArrowLeft');
+  if(e.key===nxt||e.key===prv){e.preventDefault();showSv((cur+(e.key===nxt?1:-1)+SV.length)%SV.length,true)}
+});
+showSv(0);
+
+/* estimasi */
+const ES=[
+ {id:'scal',n:'Scaling (karang gigi)',u:'sekali tindakan',a:350,b:550,sv:'Pemeriksaan & scaling'},
+ {id:'tamb',n:'Tambal gigi',u:'per gigi',a:250,b:600,q:1,sv:'Tambal gigi'},
+ {id:'blch',n:'Pemutihan gigi',u:'sekali tindakan',a:1800,b:3200,sv:'Pemutihan gigi'},
+ {id:'cabt',n:'Cabut gigi biasa',u:'per gigi',a:300,b:750,q:1,sv:'Cabut gigi & gigi bungsu'},
+ {id:'bgsu',n:'Cabut gigi bungsu',u:'per gigi',a:1500,b:4500,q:1,sv:'Cabut gigi & gigi bungsu'},
+ {id:'akar',n:'Perawatan saluran akar',u:'per gigi',a:1200,b:3000,q:1,sv:'Perawatan saluran akar'},
+ {id:'mhkt',n:'Mahkota gigi',u:'per gigi',a:2000,b:6000,q:1,sv:'Implan & mahkota'},
+ {id:'behl',n:'Behel (paket)',u:'paket perawatan',a:7000,b:14000,sv:'Behel & aligner'}
+];
+const ST={};
+$('#est').innerHTML=ES.map(e=>`<div class="er" data-id="${e.id}"><label><input type="checkbox" data-id="${e.id}"><span class="bx"></span><span><b>${e.n}</b><small>${e.u}</small></span></label><span class="rg">${R(e.a)} – ${R(e.b)}</span>${e.q?`<div class="qty" hidden>Jumlah gigi <span class="sp"><button type="button" data-q="-1" aria-label="Kurangi jumlah gigi ${e.n}">−</button><output>1</output><button type="button" data-q="1" aria-label="Tambah jumlah gigi ${e.n}">+</button></span></div>`:''}</div>`).join('');
+function calc(){
+  let a=0,b=0;const L=[];
+  ES.forEach(e=>{const s=ST[e.id];if(!s)return;const q=e.q?s:1;a+=e.a*q;b+=e.b*q;L.push([e.n+(e.q&&q>1?` ×${q}`:''),R(e.a*q)+' – '+R(e.b*q)])});
+  $('#tot').innerHTML=L.length?`${R(a)} – ${R(b)}<small>${L.length} tindakan dipilih</small>`:`Rp 0<small>Centang tindakan yang Anda butuhkan</small>`;
+  $('#lines').innerHTML=`<li><span>Konsultasi dan pemeriksaan pertama</span><span class="free">Gratis</span></li>`+L.map(l=>`<li><span>${l[0]}</span><span>${l[1]}</span></li>`).join('');
+  $('#useEst').disabled=!L.length;
+}
+$('#est').addEventListener('change',e=>{
+  const id=e.target.dataset.id,row=e.target.closest('.er'),def=ES.find(x=>x.id===id);
+  if(e.target.checked){ST[id]=def.q?1:true}else{delete ST[id]}
+  row.classList.toggle('on',e.target.checked);const qt=$('.qty',row);if(qt){qt.hidden=!e.target.checked;$('output',qt).textContent=1}
+  calc();
+});
+$('#est').addEventListener('click',e=>{
+  const b=e.target.closest('[data-q]');if(!b)return;
+  const row=b.closest('.er'),id=row.dataset.id;
+  const v=Math.min(8,Math.max(1,ST[id]+Number(b.dataset.q)));ST[id]=v;$('output',row).textContent=v;calc();
+});
+
+/* form janji */
+const svc=$('#svc'),tgl=$('#tgl'),slots=$('#slots'),form=$('#form');
+svc.innerHTML='<option value="">Pilih layanan…</option><option>Konsultasi pertama (gratis)</option>'+SV.map(s=>`<option>${s.n}</option>`).join('')+'<option>Sakit gigi mendadak</option>';
+const iso=d=>new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10);
+tgl.min=iso(new Date());tgl.max=iso(new Date(Date.now()+60*864e5));
+let picked=null;
+const dateOf=v=>new Date(v+'T00:00');
+function renderSlots(){
+  slots.innerHTML='';picked=null;$('#slotErr').hidden=true;
+  if(!tgl.value){$('#slotHint').textContent='Pilih tanggal dulu, nanti jam yang kosong muncul di sini.';return}
+  const d=dateOf(tgl.value),[o,c]=HRS(d.getDay()),today=iso(new Date())===tgl.value,now=new Date().getHours();
+  for(let h=o;h<c;h++){
+    const b=document.createElement('button');b.type='button';b.className='sl';b.textContent=pad(h)+'.00';b.dataset.h=h;
+    b.disabled=(today&&h<=now)||((d.getDate()*3+h*5+d.getDay())%7===0);b.setAttribute('aria-pressed','false');slots.appendChild(b);
+  }
+  $('#slotHint').textContent=d.getDay()===0?'Hari Minggu praktik sampai pukul 15.00. Jam yang dicoret sudah penuh atau lewat.':'Jam yang dicoret sudah penuh atau sudah lewat.';
+}
+tgl.addEventListener('change',renderSlots);
+slots.addEventListener('click',e=>{const b=e.target.closest('.sl');if(!b||b.disabled)return;picked=+b.dataset.h;$$('.sl',slots).forEach(x=>x.setAttribute('aria-pressed',x===b));$('#slotErr').hidden=true});
+function setSvc(name,note){if(name){svc.value=name;if(svc.value!==name)svc.value=''}if(note)$('#kel').value=note}
+document.addEventListener('click',e=>{const a=e.target.closest('[data-svc]');if(a)setSvc(a.dataset.svc)});
+$('#useEst').addEventListener('click',()=>{
+  const sel=ES.filter(e=>ST[e.id]);if(!sel.length)return;
+  setSvc(sel[0].sv,'Estimasi yang saya hitung: '+sel.map(e=>e.n+(e.q&&ST[e.id]>1?` ×${ST[e.id]}`:'')).join(', ')+'. '+$('#tot').textContent.replace(/\d+ tindakan dipilih/,'').trim());
+  $('#janji').scrollIntoView({behavior:reduce?'auto':'smooth'});
+});
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  if(!form.checkValidity()){form.reportValidity();return}
+  if(picked===null){const er=$('#slotErr');er.textContent=tgl.value?'Pilih jam yang masih kosong ya.':'Pilih tanggal dan jam dulu ya.';er.hidden=false;(tgl.value?slots:tgl).scrollIntoView({block:'center',behavior:'smooth'});return}
+  const f=form.elements,d=dateOf(f.tgl.value);
+  $('#okn').textContent=f.nama.value.trim().split(/\s+/)[0];
+  $('#code').textContent='KLD-'+String(Math.floor(1000+Math.random()*9000));
+  const rows=[['Layanan',f.svc.value],['Jadwal',`${d.toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long'})}, ${pad(picked)}.00`],['Untuk',f.untuk.value],['Lokasi','Jl. Anggrek No. 21']];
+  const sm=$('#sm');sm.innerHTML='';
+  rows.forEach(([k,v])=>{const r=document.createElement('div'),a=document.createElement('span'),b=document.createElement('b');a.textContent=k;b.textContent=v;r.append(a,b);sm.appendChild(r)});
+  form.hidden=true;$('#ok').hidden=false;$('#janji').scrollIntoView({behavior:reduce?'auto':'smooth'});
+});
+$('#again').addEventListener('click',()=>{form.reset();picked=null;renderSlots();form.hidden=false;$('#ok').hidden=true});
+
+/* minta dihubungi */
+$('#cbForm').addEventListener('submit',e=>{e.preventDefault();$('#cbForm').hidden=true;$('#cbDone').hidden=false});
+
+/* reveal + counter */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+$$('.rv').forEach(el=>io.observe(el));
+const co=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;co.unobserve(e.target);
+  const el=e.target,end=parseFloat(el.dataset.count),dec=+el.dataset.dec||0,fmt=n=>n.toLocaleString('id-ID',{minimumFractionDigits:dec,maximumFractionDigits:dec});
+  if(reduce){el.textContent=fmt(end);return}
+  const t0=performance.now(),D=1600;
+  (function f(t){const k=Math.min((t-t0)/D,1);el.textContent=fmt(end*(1-Math.pow(1-k,4)));if(k<1)requestAnimationFrame(f)})(t0);
+}),{threshold:.6});
+$$('[data-count]').forEach(el=>co.observe(el));
+$('#yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
